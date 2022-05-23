@@ -47,7 +47,7 @@ class Migrator {
       : defaultTemplate;
     this.migrationPath = path.resolve(migrationsPath);
     this.connection =
-      connection || await mongoose.createConnection(dbConnectionUri, {}).asPromise();
+      connection || mongoose.createConnection(dbConnectionUri, {});
     this.collection = collectionName;
     this.autosync = autosync;
     this.cli = cli;
