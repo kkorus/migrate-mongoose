@@ -218,6 +218,7 @@ class Migrator {
         migrationsRan.push(migration.toJSON());
         numMigrationsRan++;
       } catch (err) {
+        console.log(JSON.stringify(err, null, 2));
         this.log(
           `Failed to run migration ${migration.name} due to an error.`.red
         );
